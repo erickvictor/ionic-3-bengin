@@ -13,9 +13,9 @@
 </ion-header>
 
 
-<ion-content padding>
-  
-  <ion-card *ngFor="let filme of lista_filmes">
+<ion-content class="card-background-page">
+
+  <!-- <ion-card *ngFor="let filme of lista_filmes">
 
     <ion-item>
       <ion-avatar item-start>
@@ -51,5 +51,23 @@
       </ion-col>
     </ion-row>
 
+  </ion-card> 
+
+  <ion-list *ngFor="let filme of lista_filmes">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img [src]="'https://image.tmdb.org/t/p/w300/' + filme.poster_path">
+      </ion-thumbnail>
+      <h2>{{ filme.title }}</h2>
+      <p>{{ filme.release_date }}</p>
+      <button ion-button clear item-end>Mais</button>
+    </ion-item>
+  </ion-list> -->
+
+  <ion-card class="card card-ios" *ngFor="let filme of lista_filmes">
+    <img [src]="'https://image.tmdb.org/t/p/w300/' + filme.backdrop_path">
+    <div class="card-title">{{ filme.title }}</div>
+    <div class="card-subtitle">{{ filme.release_date }}</div>
   </ion-card>
+
 </ion-content>
